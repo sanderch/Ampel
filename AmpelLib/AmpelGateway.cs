@@ -15,6 +15,11 @@ namespace AmpelLib
             StartAmpelCommand(color1 + "" + color2);
         }
 
+        public void Off()
+        {
+            StartAmpelCommand("off");        
+        }
+
         private static void StartAmpelCommand(string args)
         {
             var process = new Process
@@ -27,20 +32,6 @@ namespace AmpelLib
                                       }
                               };
             process.Start();
-        }
-
-        public void Off()
-        {
-            var p = new Process
-            {
-                StartInfo =
-                {
-                    WindowStyle = ProcessWindowStyle.Hidden,
-                    FileName = Directory.GetCurrentDirectory() + @"\Externals\USBswitchCmd.exe",
-                    Arguments = "off"
-                }
-            };
-            p.Start();
         }
     }
 
