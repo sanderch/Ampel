@@ -1,6 +1,7 @@
 *.dotCover
 *.suo
 *.log
+*.user
 _ReSharper.*/
 bin/
 obj/
