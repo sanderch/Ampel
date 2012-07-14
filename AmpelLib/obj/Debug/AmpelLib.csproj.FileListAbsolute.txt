@@ -1,7 +1,0 @@
-d:\workspace\ampel\Ampel\AmpelLib\bin\Debug\AmpelLib.dll
-d:\workspace\ampel\Ampel\AmpelLib\bin\Debug\AmpelLib.pdb
-d:\workspace\ampel\Ampel\AmpelLib\obj\Debug\ResolveAssemblyReference.cache
-d:\workspace\ampel\Ampel\AmpelLib\obj\Debug\AmpelLib.dll
-d:\workspace\ampel\Ampel\AmpelLib\obj\Debug\AmpelLib.pdb
-d:\workspace\ampel\Ampel\AmpelLib\bin\Debug\AmpelLib.dll.config
-d:\workspace\ampel\Ampel\AmpelLib\bin\Debug\Externals\USBswitchCmd.exe
