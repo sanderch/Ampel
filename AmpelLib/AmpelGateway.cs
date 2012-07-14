@@ -12,7 +12,7 @@ namespace AmpelLib
 
         public void Light(LightColor color1, LightColor color2)
         {
-            StartAmpelCommand(color1 + "" + color2);
+            StartAmpelCommand(color1 + " " + color2);
         }
 
         public void Off()
