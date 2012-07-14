@@ -13,8 +13,8 @@ namespace AmpelLib
             var finalBuilderClient = new FinalBuilderServer(ConfigurationManager.AppSettings.Get("FBUrl"));
             if (!finalBuilderClient.IsAuthenticated(_authToken))
             {
-                _authToken = finalBuilderClient.Authenticate(ConfigurationManager.AppSettings.Get(""),
-                                                             ConfigurationManager.AppSettings.Get(""));
+                _authToken = finalBuilderClient.Authenticate(ConfigurationManager.AppSettings.Get("FBUser"),
+                                                             ConfigurationManager.AppSettings.Get("FBPassword"));
             }
 
             var projects = finalBuilderClient.GetProjects(_authToken);
