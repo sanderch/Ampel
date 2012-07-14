@@ -1,3 +1,4 @@
 *.dotCover
 *.suo
 _ReSharper.*/
+bin/
