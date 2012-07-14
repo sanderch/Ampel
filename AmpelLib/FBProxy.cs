@@ -63,8 +63,8 @@ namespace FBService {
         private System.Threading.SendOrPostCallback TakeResponsibilityOperationCompleted;
         
         /// <remarks/>
-        public FinalBuilderServer() {
-            this.Url = "http://ecx-build/fb/Services/FinalBuilderServer.asmx";
+        public FinalBuilderServer(string serverUrl) {
+            this.Url = serverUrl;
         }
         
         /// <remarks/>

@@ -9,7 +9,7 @@ namespace AmpelLib
         private string _authToken = "";
         public List<ProjectInformation> GetAllProjects()
         {
-            var finalBuilderClient = new FinalBuilderServer();
+            var finalBuilderClient = new FinalBuilderServer("http://ecx-build/fb/Services/FinalBuilderServer.asmx");
             if (!finalBuilderClient.IsAuthenticated(_authToken))
             {
                 _authToken = finalBuilderClient.Authenticate("admin", "adin1");
