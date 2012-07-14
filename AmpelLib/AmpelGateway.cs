@@ -7,30 +7,26 @@ namespace AmpelLib
     {
         public void Light(LightColor color)
         {
-            var process = new Process
-            {
-                StartInfo =
-                {
-                    WindowStyle = ProcessWindowStyle.Hidden,
-                    FileName = Directory.GetCurrentDirectory() + @"\Externals\USBswitchCmd.exe",
-                    Arguments = color.ToString()
-                }
-            };
-            process.Start();
+            StartAmpelCommand(color.ToString());
         }
 
         public void Light(LightColor color1, LightColor color2)
         {
-            var p = new Process
-            {
-                StartInfo =
-                {
-                    WindowStyle = ProcessWindowStyle.Hidden,
-                    FileName = Directory.GetCurrentDirectory() + @"\Externals\USBswitchCmd.exe",
-                    Arguments = color1 + " " + color2
-                }
-            };
-            p.Start();
+            StartAmpelCommand(color1 + "" + color2);
+        }
+
+        private static void StartAmpelCommand(string args)
+        {
+            var process = new Process
+                              {
+                                  StartInfo =
+                                      {
+                                          WindowStyle = ProcessWindowStyle.Hidden,
+                                          FileName = Directory.GetCurrentDirectory() + @"\Externals\USBswitchCmd.exe",
+                                          Arguments = args
+                                      }
+                              };
+            process.Start();
         }
 
         public void Off()
