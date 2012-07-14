@@ -3,7 +3,7 @@
 "VSVersion" = "3:800"
 "ProjectType" = "8:{978C614F-708E-4E1A-B201-565925725DBA}"
 "IsWebType" = "8:FALSE"
-"ProjectName" = "8:AmpelSetup1"
+"ProjectName" = "8:AmpelSetup"
 "LanguageId" = "3:1033"
 "CodePage" = "3:1252"
 "UILanguageId" = "3:1033"
@@ -67,6 +67,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -83,6 +91,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -761,7 +777,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_1B8A11609E9A4C5C9AB76DD1091CB9EC"
             {
-            "SourcePath" = "8:..\\AmpelTray\\obj\\x86\\Debug\\AmpelTray.exe"
+            "SourcePath" = "8:..\\AmpelTray\\obj\\x86\\Release\\AmpelTray.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_ADE9459E6CD748ECBB9435BAE7A10A47"
@@ -789,7 +805,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_B24B68D8FAAC40148A41726B8BAF15C5"
             {
-            "SourcePath" = "8:..\\AmpelLib\\obj\\Debug\\AmpelLib.dll"
+            "SourcePath" = "8:..\\AmpelLib\\obj\\Release\\AmpelLib.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_ADE9459E6CD748ECBB9435BAE7A10A47"
