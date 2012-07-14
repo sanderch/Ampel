@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;
 using AmpelLib;
+using AmpelTray.Properties;
 using FBService;
 
 namespace AmpelTray
@@ -59,7 +60,7 @@ namespace AmpelTray
                 GC.Collect();
             }
             ag.Off();
-            Console.WriteLine("worker thread: terminating gracefully.");
+            Console.WriteLine(Resources.Worker_DoWork_worker_thread__terminating_gracefully_);
         }
         public void RequestStop()
         {
@@ -82,7 +83,7 @@ namespace AmpelTray
         private readonly NotifyIcon _trayIcon;
         private readonly ContextMenu _trayMenu;
         private readonly Icon _iconEnabled = new Icon("ampel.ico");
-        private readonly Icon _iconDisabled = new Icon("ampel_disabled.ico");
+        // private readonly Icon _iconDisabled = new Icon("ampel_disabled.ico");
         private readonly Worker _workerObj = new Worker();
         private readonly Thread _workerThread;
 
@@ -99,7 +100,7 @@ namespace AmpelTray
 
             _trayIcon = new NotifyIcon
                            {
-                               Text = "AmpelTray",
+                               Text = Resources.TrayForm_TrayForm_AmpelTray,
                                Icon = _iconEnabled,
                                ContextMenu = _trayMenu,
                                Visible = true
