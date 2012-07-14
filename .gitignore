@@ -1,1 +1,3 @@
 *.dotCover
+*.suo
+_ReSharper.*/
