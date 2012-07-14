@@ -1,0 +1,7 @@
+<Modules>
+  <Module PersistentId="E981EE41-FF11-4E75-93C2-CA6077E233DF" ModuleId="Ampeltest" />
+  <Module PersistentId="F930BFFC-40B1-4E26-88F5-47C659A79E44" ModuleId="AmpelLib" />
+  <Module PersistentId="System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" ModuleId="System.ServiceModel" />
+  <Module PersistentId="A5C9FBAA-F48D-4847-BB64-60E8072FFBBC" ModuleId="WindowsFormsApplication1" />
+  <Module PersistentId="85A499B7-5500-4A56-962D-8F47C041CDCA" ModuleId="AmpelTray" />
+</Modules>

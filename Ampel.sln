@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ampeltest", "Ampeltest\Ampeltest.csproj", "{E981EE41-FF11-4E75-93C2-CA6077E233DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmpelLib", "AmpelLib\AmpelLib.csproj", "{F930BFFC-40B1-4E26-88F5-47C659A79E44}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmpelTray", "AmpelTray\AmpelTray.csproj", "{85A499B7-5500-4A56-962D-8F47C041CDCA}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "AmpelSetup1", "AmpelSetup1\AmpelSetup1.vdproj", "{32822A55-4C54-450B-9FDB-799CD1BEF67F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E981EE41-FF11-4E75-93C2-CA6077E233DF}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{E981EE41-FF11-4E75-93C2-CA6077E233DF}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{E981EE41-FF11-4E75-93C2-CA6077E233DF}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{E981EE41-FF11-4E75-93C2-CA6077E233DF}.Debug|x86.ActiveCfg = Debug|x86
+		{E981EE41-FF11-4E75-93C2-CA6077E233DF}.Debug|x86.Build.0 = Debug|x86
+		{E981EE41-FF11-4E75-93C2-CA6077E233DF}.Release|Any CPU.ActiveCfg = Release|x86
+		{E981EE41-FF11-4E75-93C2-CA6077E233DF}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{E981EE41-FF11-4E75-93C2-CA6077E233DF}.Release|Mixed Platforms.Build.0 = Release|x86
+		{E981EE41-FF11-4E75-93C2-CA6077E233DF}.Release|x86.ActiveCfg = Release|x86
+		{E981EE41-FF11-4E75-93C2-CA6077E233DF}.Release|x86.Build.0 = Release|x86
+		{F930BFFC-40B1-4E26-88F5-47C659A79E44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F930BFFC-40B1-4E26-88F5-47C659A79E44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F930BFFC-40B1-4E26-88F5-47C659A79E44}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{F930BFFC-40B1-4E26-88F5-47C659A79E44}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{F930BFFC-40B1-4E26-88F5-47C659A79E44}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F930BFFC-40B1-4E26-88F5-47C659A79E44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F930BFFC-40B1-4E26-88F5-47C659A79E44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F930BFFC-40B1-4E26-88F5-47C659A79E44}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{F930BFFC-40B1-4E26-88F5-47C659A79E44}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{F930BFFC-40B1-4E26-88F5-47C659A79E44}.Release|x86.ActiveCfg = Release|Any CPU
+		{85A499B7-5500-4A56-962D-8F47C041CDCA}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{85A499B7-5500-4A56-962D-8F47C041CDCA}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{85A499B7-5500-4A56-962D-8F47C041CDCA}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{85A499B7-5500-4A56-962D-8F47C041CDCA}.Debug|x86.ActiveCfg = Debug|x86
+		{85A499B7-5500-4A56-962D-8F47C041CDCA}.Debug|x86.Build.0 = Debug|x86
+		{85A499B7-5500-4A56-962D-8F47C041CDCA}.Release|Any CPU.ActiveCfg = Release|x86
+		{85A499B7-5500-4A56-962D-8F47C041CDCA}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{85A499B7-5500-4A56-962D-8F47C041CDCA}.Release|Mixed Platforms.Build.0 = Release|x86
+		{85A499B7-5500-4A56-962D-8F47C041CDCA}.Release|x86.ActiveCfg = Release|x86
+		{85A499B7-5500-4A56-962D-8F47C041CDCA}.Release|x86.Build.0 = Release|x86
+		{32822A55-4C54-450B-9FDB-799CD1BEF67F}.Debug|Any CPU.ActiveCfg = Debug
+		{32822A55-4C54-450B-9FDB-799CD1BEF67F}.Debug|Mixed Platforms.ActiveCfg = Debug
+		{32822A55-4C54-450B-9FDB-799CD1BEF67F}.Debug|x86.ActiveCfg = Debug
+		{32822A55-4C54-450B-9FDB-799CD1BEF67F}.Release|Any CPU.ActiveCfg = Release
+		{32822A55-4C54-450B-9FDB-799CD1BEF67F}.Release|Mixed Platforms.ActiveCfg = Release
+		{32822A55-4C54-450B-9FDB-799CD1BEF67F}.Release|x86.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

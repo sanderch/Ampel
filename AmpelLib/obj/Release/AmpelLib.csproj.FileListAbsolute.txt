@@ -1,0 +1,7 @@
+D:\Workspace\ampel\Ampel\AmpelLib\bin\Release\Externals\USBswitchCmd.exe
+D:\Workspace\ampel\Ampel\AmpelLib\bin\Release\AmpelLib.dll.config
+D:\Workspace\ampel\Ampel\AmpelLib\bin\Release\AmpelLib.dll
+D:\Workspace\ampel\Ampel\AmpelLib\bin\Release\AmpelLib.pdb
+D:\Workspace\ampel\Ampel\AmpelLib\obj\Release\ResolveAssemblyReference.cache
+D:\Workspace\ampel\Ampel\AmpelLib\obj\Release\AmpelLib.dll
+D:\Workspace\ampel\Ampel\AmpelLib\obj\Release\AmpelLib.pdb

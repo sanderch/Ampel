@@ -1,0 +1,8 @@
+d:\workspace\ampel\Ampel\Ampeltest\bin\Debug\Ampeltest.exe
+d:\workspace\ampel\Ampel\Ampeltest\bin\Debug\Ampeltest.pdb
+d:\workspace\ampel\Ampel\Ampeltest\obj\x86\Debug\ResolveAssemblyReference.cache
+d:\workspace\ampel\Ampel\Ampeltest\obj\x86\Debug\Ampeltest.exe
+d:\workspace\ampel\Ampel\Ampeltest\obj\x86\Debug\Ampeltest.pdb
+d:\workspace\ampel\Ampel\Ampeltest\bin\Debug\AmpelLib.dll
+d:\workspace\ampel\Ampel\Ampeltest\bin\Debug\AmpelLib.pdb
+d:\workspace\ampel\Ampel\Ampeltest\bin\Debug\Externals\USBswitchCmd.exe
