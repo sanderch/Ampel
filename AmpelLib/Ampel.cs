@@ -34,12 +34,4 @@ namespace AmpelLib
             process.Start();
         }
     }
-
-    public enum LightColor
-    {
-        Red,
-        Yellow,
-        Green,
-        None
-    }
 }

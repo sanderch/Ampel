@@ -48,6 +48,7 @@
     <Compile Include="FBGateway.cs" />
     <Compile Include="FBProxy.cs" />
     <Compile Include="IAmpel.cs" />
+    <Compile Include="LightColor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
