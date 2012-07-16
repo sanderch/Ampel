@@ -3,7 +3,7 @@ using System.IO;
 
 namespace AmpelLib
 {
-    public class AmpelGateway
+    public class AmpelGateway : IAmpel
     {
         public void Light(LightColor color)
         {
