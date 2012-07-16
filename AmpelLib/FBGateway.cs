@@ -5,7 +5,12 @@ using FBService;
 
 namespace AmpelLib
 {
-    public class FBGateway
+    public interface IBuildServer
+    {
+        List<ProjectInformation> GetAllProjects();
+    }
+
+    public class FBGateway : IBuildServer
     {
         private string _authToken = "";
         public List<ProjectInformation> GetAllProjects()
