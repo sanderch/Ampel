@@ -13,7 +13,7 @@ namespace AmpelTray
         // This method will be called when the thread is started.
         public void DoWork()
         {
-            var ag = new AmpelGateway();
+            var ag = new Ampel();
             var fb = new FBGateway();
             var lastError = false;
             while (!_shouldStop)

@@ -11,7 +11,7 @@ namespace Ampeltest
         {
             AppDomain.CurrentDomain.ProcessExit += new EventHandler(CurrentDomainProcessExit);
 
-            var ag = new AmpelGateway();
+            var ag = new Ampel();
             var fb = new FBGateway();
             var lastError = false;
 
@@ -56,7 +56,7 @@ namespace Ampeltest
 
         static void CurrentDomainProcessExit(object sender, EventArgs e)
         {
-            var ag = new AmpelGateway();
+            var ag = new Ampel();
             ag.Off();
         }
     }
