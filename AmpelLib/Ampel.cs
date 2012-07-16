@@ -7,20 +7,20 @@ namespace AmpelLib
     {
         public void Light(LightColor color)
         {
-            StartExeCommand(color.ToString());
+            StartCommand(color.ToString());
         }
 
         public void Light(LightColor color1, LightColor color2)
         {
-            StartExeCommand(string.Format("{0} {1}", color1, color2));
+            StartCommand(string.Format("{0} {1}", color1, color2));
         }
 
         public void Off()
         {
-            StartExeCommand("off");        
+            StartCommand("off");        
         }
 
-        private static void StartExeCommand(string args)
+        private static void StartCommand(string args)
         {
             var process = new Process
                               {
