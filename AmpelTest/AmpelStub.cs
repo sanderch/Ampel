@@ -1,23 +1,63 @@
-﻿using System;
-using AmpelLib;
+﻿using AmpelLib;
 
 namespace AmpelTest
 {
     class AmpelStub : IAmpel
     {
+        public bool Green { get; set; }
+        public bool Yellow { get; set; }
+        public bool Red { get; set; }
+
         public void Light(LightColor color)
         {
-            throw new NotImplementedException();
+            Off();
+            switch (color)
+            {
+                case LightColor.Green:
+                    Green = true;
+                    break;
+                case LightColor.Yellow:
+                    Yellow = true;
+                    break;
+                case LightColor.Red:
+                    Red = true;
+                    break;
+            }
         }
 
         public void Light(LightColor color1, LightColor color2)
         {
-            throw new NotImplementedException();
+            Off();
+            switch (color1)
+            {
+                case LightColor.Green:
+                    Green = true;
+                    break;
+                case LightColor.Yellow:
+                    Yellow = true;
+                    break;
+                case LightColor.Red:
+                    Red = true;
+                    break;
+            }
+            switch (color2)
+            {
+                case LightColor.Green:
+                    Green = true;
+                    break;
+                case LightColor.Yellow:
+                    Yellow = true;
+                    break;
+                case LightColor.Red:
+                    Red = true;
+                    break;
+            }
         }
 
         public void Off()
         {
-            throw new NotImplementedException();
+            Green = Yellow = Red = false;
         }
+
     }
 }
