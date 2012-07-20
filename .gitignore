@@ -4,6 +4,7 @@
 *.user
 _ReSharper.*/
 bin/
+packages/
 obj/
 Debug/
 Release/
