@@ -3,7 +3,12 @@ using FBService;
 
 namespace AmpelLib
 {
-    public class AmpelService
+    public interface IAmpelService
+    {
+        void ToggleAmpel(IAmpel ampel, List<ProjectInformation> projects);
+    }
+
+    public class AmpelService : IAmpelService
     {
         private bool _lastError;
         public void ToggleAmpel(IAmpel ampel, List<ProjectInformation> projects)
