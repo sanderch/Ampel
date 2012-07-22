@@ -4,7 +4,6 @@ using System.Threading;
 using System.Windows.Forms;
 using AmpelLib;
 using AmpelTray.Properties;
-using FBService;
 
 namespace AmpelTray
 {
@@ -15,34 +14,13 @@ namespace AmpelTray
         {
             var ag = new Ampel();
             var fb = new FBGateway();
-            var lastError = false;
+            var ampelService = new AmpelService();
+
             while (!_shouldStop)
             {
                 try
                 {
-                    var projects = fb.GetAllProjects().FindAll(x => x.Group.Contains("EC"));
-                    
-                    var isYellow = projects.FindAll(x => x.Status == ProjectStatus.Running).Count > 0;
-                    var isRed = projects.FindAll(x => x.Status == ProjectStatus.Failure || x.Status == ProjectStatus.ConfigurationError).Count > 0;
-
-                    if (!isYellow)
-                    {
-                        lastError = isRed;
-                    }
-
-                    var color1 = isRed || lastError ? LightColor.Red : LightColor.Green;
-                    var color2 = isYellow ? LightColor.Yellow : LightColor.None;
-
-                    if (color2 != LightColor.None)
-                    {
-                        ag.Light(color1, color2);
-                    }
-                    else
-                    {
-                        lastError = isRed;
-                        ag.Light(color1);
-                    }
-
+                    ampelService.ToggleAmpel(ag, fb.GetAllProjects().FindAll(x => x.Group.Contains("EC")));
                 }
                 catch
                 {

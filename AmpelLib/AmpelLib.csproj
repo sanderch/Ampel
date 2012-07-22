@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Ampel.cs" />
+    <Compile Include="AmpelService.cs" />
     <Compile Include="FBGateway.cs" />
     <Compile Include="FBProxy.cs" />
     <Compile Include="IAmpel.cs" />
