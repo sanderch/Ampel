@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;
@@ -20,7 +21,7 @@ namespace AmpelTray
             {
                 try
                 {
-                    ampelService.ToggleAmpel(ag, fb.GetAllProjects().FindAll(x => x.Group.Contains("EC")));
+                    ampelService.ToggleAmpel(ag, fb.GetAllProjects().FindAll(x => x.Group.Contains(ConfigurationManager.AppSettings.Get("ProjectsMask"))));
                 }
                 catch
                 {
