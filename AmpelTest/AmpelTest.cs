@@ -41,7 +41,7 @@ namespace AmpelTest
             Assert.That(!_ampel.Red);
 
             _ampel.Off();
-            Assert.That(!(_ampel.Green && _ampel.Yellow && _ampel.Red));
+            Assert.That(!(_ampel.Green && _ampel.Yellow && _ampel.Red)); // TODO WTF should OR be used instead
         }
     }
 }
