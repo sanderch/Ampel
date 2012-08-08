@@ -10,8 +10,15 @@ namespace AmpelTray
 {
     public class Worker
     {
+        private readonly DisableIconDelegate _disableIconDelegate;
         // This method will be called when the thread is started.
-        public void DoWork()
+        
+        public Worker(DisableIconDelegate disableIconDelegate)
+        {
+            _disableIconDelegate = disableIconDelegate;
+        }
+        
+        public void AmpelLoop()
         {
             var ag = new Ampel();
             var fb = new FBGateway();
@@ -22,16 +29,11 @@ namespace AmpelTray
                 try
                 {
                     ampelService.ToggleAmpel(ag, fb.GetAllProjects().FindAll(x => x.Group.Contains(ConfigurationManager.AppSettings.Get("ProjectsMask"))));
+
                 }
                 catch
                 {
-                    //TrayForm.trayIcon = new NotifyIcon
-                    //{
-                    //    Text = "AmpelTray",
-                    //    Icon = _iconDisabled,
-                    //    ContextMenu = trayMenu,
-                    //    Visible = true
-                    //}; 
+                    // _disableIconDelegate(); // todo create ToggleIconDelegate()
                     ag.Off();
                 }
 
@@ -41,6 +43,7 @@ namespace AmpelTray
             ag.Off();
             Console.WriteLine(Resources.Worker_DoWork_worker_thread__terminating_gracefully_);
         }
+
         public void RequestStop()
         {
             _shouldStop = true;
@@ -49,6 +52,8 @@ namespace AmpelTray
         // member will be accessed by multiple threads.
         private volatile bool _shouldStop;
     }
+
+    public delegate void DisableIconDelegate();
 
     public class TrayForm : Form
     {
@@ -61,13 +66,14 @@ namespace AmpelTray
         private readonly NotifyIcon _trayIcon;
         private readonly ContextMenu _trayMenu;
         private readonly Icon _iconEnabled = new Icon("ampel.ico");
-        // private readonly Icon _iconDisabled = new Icon("ampel_disabled.ico");
-        private readonly Worker _workerObj = new Worker();
+        private readonly Icon _iconDisabled = new Icon("ampel_disabled.ico");
+        private readonly Worker _workerObj;
         private readonly Thread _workerThread;
 
         public TrayForm()
         {
-            _workerThread = new Thread(_workerObj.DoWork);
+            _workerObj = new Worker(DisableIcon);
+            _workerThread = new Thread(_workerObj.AmpelLoop);
             // Create a simple tray menu with only one item.
             _trayMenu = new ContextMenu();
             _trayMenu.MenuItems.Add("Exit", OnExit);
@@ -85,6 +91,14 @@ namespace AmpelTray
                            };
 
             // Add menu to tray icon and show it.
+        }
+
+        public void DisableIcon()
+        {
+            if (_trayIcon != null && _trayIcon.Icon != _iconDisabled)
+            {
+                _trayIcon.Icon = _iconDisabled;
+            }
         }
 
         protected override void OnLoad(EventArgs e)
