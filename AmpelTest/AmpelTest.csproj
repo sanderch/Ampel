@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AmpelServiceTest.cs" />
     <Compile Include="AmpelStub.cs" />
     <Compile Include="AmpelTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
