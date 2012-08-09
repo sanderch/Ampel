@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Drawing;
 using System.Threading;
@@ -10,12 +11,11 @@ namespace AmpelTray
 {
     public class Worker
     {
-        private readonly DisableIconDelegate _disableIconDelegate;
-        // This method will be called when the thread is started.
+        private readonly ToggleIconDelegate _toggleIconDelegate;
         
-        public Worker(DisableIconDelegate disableIconDelegate)
+        public Worker(ToggleIconDelegate toggleIconDelegate)
         {
-            _disableIconDelegate = disableIconDelegate;
+            _toggleIconDelegate = toggleIconDelegate;
         }
         
         public void AmpelLoop()
@@ -29,11 +29,11 @@ namespace AmpelTray
                 try
                 {
                     ampelService.ToggleAmpel(ag, fb.GetAllProjects().FindAll(x => x.Group.Contains(ConfigurationManager.AppSettings.Get("ProjectsMask"))));
-
+                    _toggleIconDelegate(IconStatus.Enabled);
                 }
                 catch
                 {
-                    // _disableIconDelegate(); // todo create ToggleIconDelegate()
+                    _toggleIconDelegate(IconStatus.Disabled);
                     ag.Off();
                 }
 
@@ -48,12 +48,13 @@ namespace AmpelTray
         {
             _shouldStop = true;
         }
-        // Volatile is used as hint to the compiler that this data
-        // member will be accessed by multiple threads.
+
         private volatile bool _shouldStop;
     }
 
-    public delegate void DisableIconDelegate();
+    public delegate void ToggleIconDelegate(IconStatus iconStatus);
+
+    public enum IconStatus  { Enabled, Disabled }
 
     public class TrayForm : Form
     {
@@ -69,18 +70,18 @@ namespace AmpelTray
         private readonly Icon _iconDisabled = new Icon("ampel_disabled.ico");
         private readonly Worker _workerObj;
         private readonly Thread _workerThread;
+        private readonly Dictionary<IconStatus, Icon> _iconStatusMap;
 
         public TrayForm()
         {
-            _workerObj = new Worker(DisableIcon);
+            _workerObj = new Worker(ToggleIcon);
             _workerThread = new Thread(_workerObj.AmpelLoop);
-            // Create a simple tray menu with only one item.
+            _iconStatusMap = new Dictionary<IconStatus, Icon> {
+                                                                    {IconStatus.Enabled, _iconEnabled},
+                                                                    {IconStatus.Disabled, _iconDisabled},
+                                                              };
             _trayMenu = new ContextMenu();
             _trayMenu.MenuItems.Add("Exit", OnExit);
-
-            // Create a tray icon. In this example we use a
-            // standard system icon for simplicity, but you
-            // can of course use your own custom icon too.
 
             _trayIcon = new NotifyIcon
                            {
@@ -90,15 +91,11 @@ namespace AmpelTray
                                Visible = true
                            };
 
-            // Add menu to tray icon and show it.
         }
 
-        public void DisableIcon()
+        public void ToggleIcon(IconStatus iconStatus)
         {
-            if (_trayIcon != null && _trayIcon.Icon != _iconDisabled)
-            {
-                _trayIcon.Icon = _iconDisabled;
-            }
+            _trayIcon.Icon = _iconStatusMap[iconStatus];
         }
 
         protected override void OnLoad(EventArgs e)
