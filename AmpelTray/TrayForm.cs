@@ -27,7 +27,7 @@ namespace AmpelTray
         private readonly Thread _workerThread;
         private readonly Dictionary<IconStatus, Icon> _iconStatusMap;
 
-        public TrayForm()
+        private TrayForm()
         {
             _ampelLoopWorker = new AmpelLoopWorker(ToggleIcon);
             _workerThread = new Thread(_ampelLoopWorker.DoAmpelLoop);
@@ -48,7 +48,7 @@ namespace AmpelTray
 
         }
 
-        public void ToggleIcon(IconStatus iconStatus)
+        private void ToggleIcon(IconStatus iconStatus)
         {
             _trayIcon.Icon = _iconStatusMap[iconStatus];
         }
