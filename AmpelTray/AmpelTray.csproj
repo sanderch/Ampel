@@ -80,6 +80,7 @@
     <Content Include="ampel_disabled.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="TextFile1.txt" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AmpelLib\AmpelLib.csproj">
