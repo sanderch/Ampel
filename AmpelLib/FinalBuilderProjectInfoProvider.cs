@@ -17,7 +17,9 @@ namespace AmpelLib
 
 		public List<ProjectInformationDto> GetProjectInfos(ProviderConfigElement providerInfo)
 		{
-			return _buildServer.GetAllProjects().Select(x => new ProjectInformationDto
+			return _buildServer.GetAllProjects()
+				.Where(f => f.Group.Contains(providerInfo.GroupMask))
+				.Select(x => new ProjectInformationDto
 				{
 					Name = x.Name,
 					Status = ParseFBStatus(x.Status)

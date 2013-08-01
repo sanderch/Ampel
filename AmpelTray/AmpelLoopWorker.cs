@@ -36,12 +36,6 @@ namespace AmpelTray
 						pid.AddRange(provider.GetProjectInfos(providerInfo));
 					}
 
-	                //List<ProjectInformation> projectInformations = fb.GetAllProjects().FindAll(x => x.Group.Contains(ConfigurationManager.AppSettings.Get("ProjectsMask")));
-
-					//List<ProjectInformationDto> pid = fb.GetAllProjects().FindAll(x => x.Group.Contains(ConfigurationManager.AppSettings.Get("ProjectsMask"))).Select(f => new ProjectInformationDto
-																																											   //{
-																																											   //}).ToList();
-
 	                ampelService.ToggleAmpel(ag, pid);
                     _toggleIconDelegate(IconStatus.Enabled);
                 }
