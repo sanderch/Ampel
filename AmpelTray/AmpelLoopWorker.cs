@@ -33,7 +33,7 @@ namespace AmpelTray
 					foreach (ProviderConfigElement providerInfo in providerSection.Providers)
 					{
 						var provider = (IProjectInfoProvider)Activator.CreateInstance(Type.GetType(providerInfo.Type));
-						pid.AddRange(provider.GetProjectInfos(providerInfo.GroupMask));
+						pid.AddRange(provider.GetProjectInfos(providerInfo));
 					}
 
 	                //List<ProjectInformation> projectInformations = fb.GetAllProjects().FindAll(x => x.Group.Contains(ConfigurationManager.AppSettings.Get("ProjectsMask")));

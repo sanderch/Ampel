@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
+using AmpelLib.ConfigSections;
 
 namespace AmpelLib
 {
 	public interface IProjectInfoProvider
 	{
-		List<ProjectInformationDto> GetProjectInfos(string groupMask);
+		List<ProjectInformationDto> GetProjectInfos(ProviderConfigElement providerInfo);
 	}
 }
