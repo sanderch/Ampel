@@ -9,9 +9,4 @@ namespace AmpelLib
 			return new List<ProjectInformationDto>(){new ProjectInformationDto(){}};
 		}
 	}
-
-	public interface IProjectInfoProvider
-	{
-		List<ProjectInformationDto> GetProjectInfos(string groupMask);
-	}
 }
