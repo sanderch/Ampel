@@ -51,7 +51,9 @@
     <Compile Include="FBProxy.cs" />
     <Compile Include="IAmpel.cs" />
     <Compile Include="LightColor.cs" />
+    <Compile Include="ProjectInformationDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TeamCityProjectInfoProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Externals\USBswitchCmd.exe">

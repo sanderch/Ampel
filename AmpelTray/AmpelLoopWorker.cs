@@ -1,7 +1,9 @@
 using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Threading;
 using AmpelLib;
+using AmpelLib.ConfigSections;
 using AmpelTray.Properties;
 
 namespace AmpelTray
@@ -18,14 +20,29 @@ namespace AmpelTray
         public void DoAmpelLoop()
         {
             var ag = new Ampel();
-            var fb = new FBGateway();
+            //var fb = new FBGateway();
             var ampelService = new AmpelService();
 
             while (!_shouldStop)
             {
                 try
                 {
-                    ampelService.ToggleAmpel(ag, fb.GetAllProjects().FindAll(x => x.Group.Contains(ConfigurationManager.AppSettings.Get("ProjectsMask"))));
+	                var providerSection = ConfigurationManager.GetSection("ProjectInfoProvider") as ProjectInfoProviderSection;
+
+					var pid = new List<ProjectInformationDto>();
+					foreach (ProviderConfigElement providerInfo in providerSection.Providers)
+					{
+						var provider = (IProjectInfoProvider)Activator.CreateInstance(Type.GetType(providerInfo.Type));
+						pid.AddRange(provider.GetProjectInfos(providerInfo.GroupMask));
+					}
+
+	                //List<ProjectInformation> projectInformations = fb.GetAllProjects().FindAll(x => x.Group.Contains(ConfigurationManager.AppSettings.Get("ProjectsMask")));
+
+					//List<ProjectInformationDto> pid = fb.GetAllProjects().FindAll(x => x.Group.Contains(ConfigurationManager.AppSettings.Get("ProjectsMask"))).Select(f => new ProjectInformationDto
+																																											   //{
+																																											   //}).ToList();
+
+	                ampelService.ToggleAmpel(ag, pid);
                     _toggleIconDelegate(IconStatus.Enabled);
                 }
                 catch
@@ -48,4 +65,6 @@ namespace AmpelTray
 
         private volatile bool _shouldStop;
     }
+
+	
 }

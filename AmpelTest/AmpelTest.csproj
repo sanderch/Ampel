@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="activatorTests.cs" />
     <Compile Include="AmpelServiceTest.cs" />
     <Compile Include="AmpelStub.cs" />
     <Compile Include="AmpelTest.cs" />

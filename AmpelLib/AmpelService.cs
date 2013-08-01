@@ -5,16 +5,16 @@ namespace AmpelLib
 {
     public interface IAmpelService
     {
-        void ToggleAmpel(IAmpel ampel, List<ProjectInformation> projects);
+        void ToggleAmpel(IAmpel ampel, List<ProjectInformationDto> projects);
     }
 
     public class AmpelService : IAmpelService
     {
         private bool _lastError;
-        public void ToggleAmpel(IAmpel ampel, List<ProjectInformation> projects)
+        public void ToggleAmpel(IAmpel ampel, List<ProjectInformationDto> projects)
         {
-            var isYellow = projects.FindAll(x => x.Status == ProjectStatus.Running).Count > 0;
-            var isRed = projects.FindAll(x => x.Status == ProjectStatus.Failure || x.Status == ProjectStatus.ConfigurationError).Count > 0;
+            var isYellow = projects.FindAll(x => x.Status == ProjectStatusEnum.Running).Count > 0;
+            var isRed = projects.FindAll(x => x.Status == ProjectStatusEnum.Failure || x.Status == ProjectStatusEnum.ConfigurationError).Count > 0;
             if (!isYellow)
             {
                 _lastError = isRed;

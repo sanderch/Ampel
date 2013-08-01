@@ -21,11 +21,11 @@ namespace AmpelTest
         [Test]
         public void ampel_is_green_if_builds_succeeded()
         {
-            var projects = new List<ProjectInformation>
+            var projects = new List<ProjectInformationDto>
                 {
-                    new ProjectInformation {Name = "proj1", Status = ProjectStatus.Success},
-                    new ProjectInformation {Name = "proj2", Status = ProjectStatus.Success},
-                    new ProjectInformation {Name = "proj3", Status = ProjectStatus.Success}
+                    new ProjectInformationDto {Name = "proj1", Status = ProjectStatusEnum.Success},
+                    new ProjectInformationDto {Name = "proj2", Status = ProjectStatusEnum.Success},
+                    new ProjectInformationDto {Name = "proj3", Status = ProjectStatusEnum.Success}
                 };
 
             _ampelService.ToggleAmpel(_ampel, projects);
@@ -38,11 +38,11 @@ namespace AmpelTest
         [Test]
         public void ampel_is_yellow_if_build_is_in_progress()
         {
-            var projects = new List<ProjectInformation>
+            var projects = new List<ProjectInformationDto>
                 {
-                    new ProjectInformation {Name = "proj1", Status = ProjectStatus.Success},
-                    new ProjectInformation {Name = "proj2", Status = ProjectStatus.Running},
-                    new ProjectInformation {Name = "proj3", Status = ProjectStatus.Failure}
+                    new ProjectInformationDto {Name = "proj1", Status = ProjectStatusEnum.Success},
+                    new ProjectInformationDto {Name = "proj2", Status = ProjectStatusEnum.Running},
+                    new ProjectInformationDto {Name = "proj3", Status = ProjectStatusEnum.Failure}
                 };
 
             _ampelService.ToggleAmpel(_ampel, projects);
@@ -53,11 +53,11 @@ namespace AmpelTest
         [Test]
         public void ampel_is_red_if_build_is_broken()
         {
-            var projects = new List<ProjectInformation>
+			var projects = new List<ProjectInformationDto>
                 {
-                    new ProjectInformation {Name = "proj1", Status = ProjectStatus.Success},
-                    new ProjectInformation {Name = "proj2", Status = ProjectStatus.Running},
-                    new ProjectInformation {Name = "proj3", Status = ProjectStatus.Failure}
+                    new ProjectInformationDto {Name = "proj1", Status = ProjectStatusEnum.Success},
+                    new ProjectInformationDto {Name = "proj2", Status = ProjectStatusEnum.Running},
+                    new ProjectInformationDto {Name = "proj3", Status = ProjectStatusEnum.Failure}
                 };
 
             _ampelService.ToggleAmpel(_ampel, projects);
