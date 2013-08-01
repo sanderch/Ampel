@@ -94,7 +94,7 @@ namespace AmpelLib
 			var doc = ProcessWebRequest(providerInfo, queryUrl);
 
 			var status = (string)doc.Elements("build").First().Attribute("status");
-			var finishedDate = doc.Root.Elements("finishDate").First().Value;
+			var finishedDate = doc.Root.Elements("finishDate").FirstOrDefault() != null ? doc.Root.Elements("finishDate").First().Value : null;
 
 			return new TeamCityBuildDto { FinishDate = finishedDate, Status = status };
 		}
