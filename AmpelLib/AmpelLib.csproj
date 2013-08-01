@@ -49,6 +49,7 @@
     <Compile Include="ConfigSections\ProjectInfoProviderSection.cs" />
     <Compile Include="FBGateway.cs" />
     <Compile Include="FBProxy.cs" />
+    <Compile Include="FinalBuilderProjectInfoProvider.cs" />
     <Compile Include="IAmpel.cs" />
     <Compile Include="IProjectInfoProvider.cs" />
     <Compile Include="LightColor.cs" />
