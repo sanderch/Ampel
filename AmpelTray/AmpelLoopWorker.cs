@@ -20,8 +20,8 @@ namespace AmpelTray
         public void DoAmpelLoop()
         {
             var ag = new Ampel();
-            //var fb = new FBGateway();
-            var ampelService = new AmpelService();
+
+			var ampelService = new AmpelService();
 
             while (!_shouldStop)
             {
